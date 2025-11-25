@@ -81,8 +81,16 @@ public class Controller3D {
         pyramid.setColor(Color.YELLOW);
         scene.add(pyramid);
 
-        // 3. Osy (uprostřed)
-        scene.add(new Axis());
+
+        // 3. OSY (RGB - Splnění zadání "barevné úsečky")
+        // Osa X - Červená (Red)
+        scene.add(new Axis(2, 0, 0, Color.RED));
+
+        // Osa Y - Zelená (Green)
+        scene.add(new Axis(0, 2, 0, Color.GREEN));
+
+        // Osa Z - Modrá (Blue)
+        scene.add(new Axis(0, 0, 2, Color.BLUE));
 
         // 4. Křivka (Bézierův oblouk nad krychlí)
         Point3D p1 = new Point3D(-3, 0, 0);

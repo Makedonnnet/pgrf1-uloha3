@@ -3,26 +3,25 @@ package solid;
 import transforms.Point3D;
 import java.awt.Color;
 
+/**
+ * Třída pro reprezentaci jedné osy (úsečky) s vlastní barvou.
+ */
 public class Axis extends Solid {
 
-    public Axis() {
-        // Střed (Počátek)
+    /**
+     * Vytvoří osu z počátku [0,0,0] do bodu [x,y,z].
+     */
+    public Axis(double x, double y, double z, Color color) {
+        // Bod 0: Počátek
         vertexBuffer.add(new Point3D(0, 0, 0));
 
-        // Osa X - Délka 1.0
-        vertexBuffer.add(new Point3D(1, 0, 0));
+        // Bod 1: Konec osy
+        vertexBuffer.add(new Point3D(x, y, z));
 
-        // Osa Y - Délka 1.0
-        vertexBuffer.add(new Point3D(0, 1, 0));
+        // Spojíme je úsečkou
+        addIndices(0, 1);
 
-        // Osa Z - Délka 1.0
-        vertexBuffer.add(new Point3D(0, 0, 1));
-
-        // Spojíme střed s konci
-        addIndices(0, 1); // X
-        addIndices(0, 2); // Y
-        addIndices(0, 3); // Z
-
-        this.color = Color.WHITE;
+        this.color = color;
+        this.name = "Osa";
     }
 }
