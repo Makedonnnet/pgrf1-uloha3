@@ -1,12 +1,13 @@
 # PGRF1 - Úloha 3: 3D Drátový Renderer
 
-Semestrální projekt z předmětu **Počítačová grafika I (PGRF1)**.
+Semestrální projekt z předmětu **Počítačová grafika I (PGRF1)** na FIM UHK.
 Tato aplikace je kompletní implementací 3D grafického pipeline od nuly (bez použití externích grafických knihoven jako OpenGL/DirectX) v jazyce Java.
 
+---
 
 ##  Implementované funkce
 
-Projekt splňuje všechny povinné požadavky zadání pro 3. úlohu:
+Projekt splňuje všechny povinné požadavky i bonusové úkoly:
 
 ### 1. Jádro aplikace (Vlastní matematická knihovna)
 Aplikace nevyužívá žádné externí matematické knihovny. Veškerá logika je implementována v balíčku `transforms`:
@@ -29,6 +30,10 @@ Scéna obsahuje zástupce všech povinných skupin těles (balíček `solid`):
 * **Skupina 3:** **Bézierova křivka** - azurový oblouk definovaný 4 řídícími body.
 * **Osy:** Zobrazení 3D os (červená=X, zelená=Y, modrá=Z) pro lepší orientaci.
 
+###  Bonusové funkce
+* **Bonus 1:** **Parametrická plocha (Surface)** - generovaná mřížka definovaná matematickou funkcí (vlnobití), zobrazená azurovou barvou pod scénou.
+* **Bonus 2:** **Animace** - parametrická plocha se plynule otáčí kolem svislé osy pomocí časovače (`Timer`).
+
 ---
 
 ##  Ovládání
@@ -49,7 +54,7 @@ Aplikace se ovládá interaktivně pomocí klávesnice a myši:
 Kód je rozdělen do logických balíčků:
 
 * **`transforms`**: Matematické jádro (matice, vektory, kamera).
-* **`solid`**: Definice 3D modelů (Vertex Buffer, Index Buffer).
+* **`solid`**: Definice 3D modelů (Vertex Buffer, Index Buffer) a křivek.
 * **`renderer3d`**: Logika vykreslování a transformací.
 * **`controller`**: Řízení aplikace, inicializace scény a obsluha vstupů.
 * **`rasterize`**: Nízkoúrovňové kreslení úseček (LineRasterizer).
